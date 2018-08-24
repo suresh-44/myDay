@@ -30,7 +30,8 @@ mongoose.connect(db.mongodbURI, {
   .catch(err => console.log(err))
 
 
-const port = process.env.PORT || 3000 // setting hbs
+
+// setting hbs
 app.engine('handlebars', hbs({
   defaultLayout: 'main'
 }));
@@ -86,9 +87,7 @@ app.get('/about', (req, res) => {
 app.use('/ideas', ideas)
 app.use('/user', user)
 
-
+var port = process.env.PORT || 3000
 app.listen(port, () => {
-  console.log(`server up at ${app.get('port')}`)
+  console.log(`server up at ${port}`)
 })
-
-// JetyoxBitpyctA7
