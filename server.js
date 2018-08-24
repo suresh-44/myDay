@@ -30,8 +30,7 @@ mongoose.connect(db.mongodbURI, {
   .catch(err => console.log(err))
 
 
-app.set('port', process.env.PORT || 3000)
-// setting hbs
+const port = process.env.PORT || 3000 // setting hbs
 app.engine('handlebars', hbs({
   defaultLayout: 'main'
 }));
@@ -88,7 +87,7 @@ app.use('/ideas', ideas)
 app.use('/user', user)
 
 
-app.listen(app.get('port'), () => {
+app.listen(port, () => {
   console.log(`server up at ${app.get('port')}`)
 })
 
